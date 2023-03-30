@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    place-items: center;
+    justify-content: center;
+    font-family: 'Alkatra', cursive;
+}
+
+h1{
+    display: flex;
+    font-size: 26px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+input{
+    height: 35px;
+    width: 348px;
+    margin-right: 8px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border-color: #2aa4a5;
+}
+
+#button1{
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 9px;
+    background-color: #00f8ff;
+}
+
+h4{
+    font-size: 15px;
+    color: #5b6364cc;
+}
+
+#taskTarjet{
+    height: 35px;
+    width: 381px;
+    display: flex;
+    margin-top: 5px;
+    padding-left: 14px;
+    border-radius: 20px;
+    padding-right: 14px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dfeced94;
+}
+
+#taskList{
+    margin-top: 10px;
+}
+
+#infoClear{
+    display: flex;
+    color: #abdfed;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#button2{
+    width: 80px;
+    border: none;
+    height: 34px;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: #fd3434;
+}
+
+.button{
+    cursor: pointer;
+}
