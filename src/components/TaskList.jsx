@@ -1,21 +1,18 @@
-// En este componente debe visualizarse la lista completa de tareas.
 import Task from "./Task";
 
-function TaskList(props) {
-    const { task } = props;
+const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
     return (
-        <div>
-            <div id="taskList">
-                {task.map(task => {
-                    return (
-                        <Task
-                            key={task.id}
-                            charge={task.charge}
-                        />
-                    )
-                })}
-            </div>
-        </div>
+      <ul>
+        {tasks.sort((a, b) => b.id - a.id).map(task => (
+          <Task
+            key={task.id}
+            task={task}
+            deleteTask={deleteTask}
+            toggleTask={toggleTask}
+            enterEditMode={enterEditMode}
+          />
+        ))}
+      </ul>
     )
 }
 

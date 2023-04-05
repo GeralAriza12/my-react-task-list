@@ -9,41 +9,60 @@ body{
     place-items: center;
     justify-content: center;
     font-family: 'Alkatra', cursive;
+    background: linear-gradient(181deg, rgb(221 239 245 / 26%) 0%, rgb(40 95 126 / 65%) 80%, rgb(19 118 109 / 75%) 100%);
 }
 
 h1{
     display: flex;
-    font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 31px;
+    margin-bottom: 28px;
     justify-content: center;
 }
 
-input{
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.input{
     height: 35px;
     width: 348px;
     margin-right: 8px;
     border-radius: 5px;
     padding-left: 10px;
     border-color: #2aa4a5;
+    background: #ffffff17;
 }
 
-#button1{
-    width: 40px;
-    height: 40px;
+.btn{
+    width: 38px;
+    height: 38px;
     border: none;
+    color: white;
     cursor: pointer;
-    border-radius: 9px;
-    background-color: #00f8ff;
+    margin-top: 24px;
+    border-radius: 6px;
+    background-color: #2aa4a5;
 }
-
-h4{
-    font-size: 15px;
-    color: #5b6364cc;
+ 
+#tasks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+    
+.checkbox{
+    margin-right: 11px;
 }
 
 #taskTarjet{
     height: 35px;
-    width: 381px;
+    width: 380px;
     display: flex;
     margin-top: 5px;
     padding-left: 14px;
@@ -66,14 +85,20 @@ h4{
     justify-content: space-between;
 }
 
-#button2{
-    width: 80px;
+.buttonE, .buttonB{
     border: none;
-    height: 34px;
-    color: white;
+    background: none;
     cursor: pointer;
-    border-radius: 12px;
-    background-color: #fd3434;
+    width: 35px;
+    height: 35px;
+}
+
+.buttonB{
+    color: #ff0000c4;
+}
+
+.buttonE{
+    color: #0000ffc9;
 }
 
 .button{
