@@ -11,16 +11,16 @@ const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
     }
 
     return(
-        <li id="taskTarjet">
-            <div id="tasks">
-                <input className="checkbox" type="checkbox" checked={isChecked} onChange={checkboxChange} name={task.name} id={task.id} />
-                <label htmlFor={task.id}>{task.name} </label>
-            </div>
-            <div>
-                <button className="buttonE" aria-label={`Update ${task.name} task`} onClick={()=> enterEditMode(task)}> <PencilSquareIcon width={24} height={24} /> </button>
-                <button className="buttonB" aria-label={`Delete ${task.name} task`} onClick={()=> deleteTask(task.id)}>  <TrashIcon width={24} height={24} /> </button>
-            </div>
-        </li>
+    <li id="taskTarjet">
+        <div id="tasks">
+            <input className="checkbox" type="checkbox" checked={isChecked} onChange={checkboxChange} name={task.name} id={task.id} />
+            <label htmlFor={task.id}>{task.name} </label>
+        </div>
+        <div>
+            <button className="buttonE" aria-label={`Update ${task.name} task`} onClick={()=> enterEditMode(task)}> <PencilSquareIcon width={24} height={24} /> </button>
+            <button className="buttonB" aria-label={`Delete ${task.name} task`} onClick={()=> deleteTask(task.id)}>  <TrashIcon width={24} height={24} /> </button>
+        </div>
+    </li>
     );
 }
 

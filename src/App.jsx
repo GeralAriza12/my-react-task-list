@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header';
 import TaskForm from './components/TaskForm'
@@ -11,13 +11,16 @@ function App() {
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null)
+  const [counter, setCounter] = useState([])
 
   const addTask = (task) => {
     setTasks(prevState => [...prevState, task])
+    setCounter((prevState) => prevState + 1)
   }
 
   const deleteTask = (id) => {
     setTasks(prevState => prevState.filter(t => t.id !== id));
+    setCounter((prevState) => prevState - 1)
   }
 
   const toggleTask = (id) => {
@@ -48,16 +51,26 @@ function App() {
     setPreviousFocusEl(document.activeElement);
   }
 
+  useEffect(()=>{
+    let count = localStorage.getItem('counter')
+    if (count){
+      setCounter (JSON.parse(count))
+    }
+  }, [])
+
+  useEffect(()=>{
+    localStorage.setItem('counter', JSON.stringify(counter))
+  }, [counter])
+
   return (
     <div>
       < Header />
       {isEditing && (<TaskEdit editedTask={editedTask} updateTask={updateTask} closeEditMode={closeEditMode}/>)}
       <TaskForm addTask={addTask}/>
       {tasks && (<TaskList tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} enterEditMode={enterEditMode}/>)}
-      {/* <div id='infoClear'>
-        <h4>Tienes x tareas pendientes</h4>
-        <button id='button2'>Eliminar todo</button>
-      </div> */}
+      <div id='infoClear'>
+        <h4>{`El la lista hay: ${counter} tareas`}</h4>
+      </div>
     </div>
   )
 }

@@ -15,7 +15,7 @@ import { PlusIcon } from '@heroicons/react/24/solid'
   }
 
   return (
-    <form onSubmit={addSubmit}>
+      <form onSubmit={addSubmit}>
       <div>
         <label htmlFor="task">¿Qué tareas tienes?</label>
         <input className="input" type="text" id="task" placeholder='¿Qué tareas tienes?' required 

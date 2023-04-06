@@ -79,10 +79,11 @@ form{
 
 #infoClear{
     display: flex;
-    color: #abdfed;
+    color: #477e7d;
     margin-top: 20px;
+    margin-bottom: 20px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .buttonE, .buttonB{
