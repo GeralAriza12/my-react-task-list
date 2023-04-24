@@ -4,11 +4,11 @@ import useLocalStorage from "./useLocalStorage";
 export function usePersonalizado() {
   const [tasks, setTasks] = useLocalStorage('task-list', []);
   const [editedTask, setEditedTask] = useState(null);
+  const [editedDescription, setEditedDescription] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null)
   const [counter, setCounter] = useState(Number)
 
-  console.log(typeof counter)
   const addTask = (task) => {
     setTasks(prevState => [...prevState, task])
     setCounter((prevState) => prevState + 1)
@@ -30,7 +30,8 @@ export function usePersonalizado() {
   const updateTask = (task) => {
     setTasks(prevState => prevState.map(t => (
       t.id === task.id
-        ? { ...t, name: task.name }
+        ? { ...t, name: task.name, description: task.description}
+
         : t
     )))
     closeEditMode();
@@ -41,8 +42,9 @@ export function usePersonalizado() {
     previousFocusEl.focus();
   }
 
-  const enterEditMode = (task) => {
+  const enterEditMode = (task, description) => {
     setEditedTask(task);
+    setEditedDescription(description);
     setIsEditing(true);
     setPreviousFocusEl(document.activeElement);
   }

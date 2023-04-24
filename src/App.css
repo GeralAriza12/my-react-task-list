@@ -12,6 +12,11 @@ body{
     background: linear-gradient(181deg, rgb(221 239 245 / 26%) 0%, rgb(40 95 126 / 65%) 80%, rgb(19 118 109 / 75%) 100%);
 }
 
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
 h1{
     display: flex;
     font-size: 31px;
@@ -24,9 +29,18 @@ label{
     flex-direction: column;
 }
 
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 form{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 15px;
+    justify-content: center;
 }
 
 .input{
@@ -35,8 +49,16 @@ form{
     margin-right: 8px;
     border-radius: 5px;
     padding-left: 10px;
+    margin-bottom: 6px;
     border-color: #2aa4a5;
     background: #ffffff17;
+}
+
+span.error {
+    display: block;
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
 }
 
 .btn{
@@ -61,10 +83,11 @@ form{
 }
 
 #taskTarjet{
-    height: 35px;
+    height: 60px;
     width: 380px;
     display: flex;
     margin-top: 5px;
+    margin-left: 3px;
     padding-left: 14px;
     border-radius: 20px;
     padding-right: 14px;

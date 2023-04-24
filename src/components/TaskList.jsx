@@ -1,12 +1,13 @@
 import Task from "./Task";
 
-const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
+const TaskList = ({tasks, description, deleteTask, toggleTask, enterEditMode}) => {
     return (
       <ul>
         {tasks.sort((a, b) => b.id - a.id).map(task => (
           <Task
             key={task.id}
             task={task}
+            description={description}
             deleteTask={deleteTask}
             toggleTask={toggleTask}
             enterEditMode={enterEditMode}

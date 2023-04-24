@@ -14,7 +14,7 @@ const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
     <li id="taskTarjet">
         <div id="tasks">
             <input className="checkbox" type="checkbox" checked={isChecked} onChange={checkboxChange} name={task.name} id={task.id} />
-            <label htmlFor={task.id}>{task.name} </label>
+            <label htmlFor={task.id}> <strong>{task.name}</strong> {task.description}</label>
         </div>
         <div>
             <button className="buttonE" aria-label={`Update ${task.name} task`} onClick={()=> enterEditMode(task)}> <PencilSquareIcon width={24} height={24} /> </button>

@@ -3,6 +3,7 @@ import { CheckIcon } from '@heroicons/react/24/solid'
 
 const TaskEdit = ({editedTask, updateTask, closeEditMode})  => {
   const [updatedTask, setUpdatedTask] = useState(editedTask.name);
+  const [updatedDescription, setUpdatedDescription] = useState(editedTask.description)
 
   useEffect(() => {
     const closeModalIfEscaped = (e) => {
@@ -17,19 +18,24 @@ const TaskEdit = ({editedTask, updateTask, closeEditMode})  => {
 
   const editSubmit = (e) => {
     e.preventDefault();
-    updateTask({...editedTask, name: updatedTask})
+    updateTask({...editedTask, name: updatedTask, description: updatedDescription})
   }
 
   return (
-    <div role="dialog" aria-labelledby="editTask" onClick={(e) => {e.target === e.currentTarget && closeEditMode()}} >
+    <div onClick={(e) => {e.target === e.currentTarget && closeEditMode()}} >
       <form onSubmit={editSubmit}>
         <div>
           <label htmlFor="editTask">Edita la tarea</label>
           <input className="input" type="text" id="editTask" placeholder='Edita la tarea' required 
           value={updatedTask}
           onInput={(e) => setUpdatedTask(e.target.value)}/>
+
+          <input className="input" type="text" id="editDescription" placeholder='Edita la descripción'
+          value={updatedDescription}
+          onInput={(e) => setUpdatedDescription(e.target.value)}/>
+          
         </div>
-        <button className="btn" aria-label={`Confirma la tarea Editada ${updatedTask}`} type='submit'><CheckIcon /></button>
+        <button className="btn" aria-label={`Confirma la tarea Editada ${updatedTask, updatedDescription}`} type='submit'><CheckIcon /></button>
       </form>
     </div>
     
