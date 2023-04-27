@@ -1,23 +1,27 @@
 import './App.css'
-import Header from './components/Header';
-import TaskForm from './components/TaskForm'
-import TaskList from './components/TaskList'
-import TaskEdit from './components/TaskEdit'
-import { usePersonalizado } from './hooks/usePersonalizado';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { lazy, Suspense } from "react"
+
+const Menu = lazy(() => import("./components/Menu"));
+const Home = lazy(() => import("./pages/Home"));
+const AboutUs = lazy(() => import("./pages/SobreNosotros"));
+const ListTask = lazy(() => import("./pages/Tareas"));
+
 
 function App() {
-  const [addTask, enterEditMode, updateTask, deleteTask, closeEditMode, toggleTask,
-    tasks, editedTask, isEditing, counter ] = usePersonalizado();
 
   return (
     <div>
-      < Header />
-      {isEditing && (<TaskEdit editedTask={editedTask} updateTask={updateTask} closeEditMode={closeEditMode}/>)}
-      <TaskForm addTask={addTask}/>
-      {tasks && (<TaskList tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} enterEditMode={enterEditMode}/>)}
-      <div id='infoClear'>
-        <h4>{`El la lista hay: ${counter} tareas`}</h4>
-      </div>
+      <BrowserRouter>
+        <Menu />
+        <Suspense fallback={<h2>Estamos procesando tu solucitud ...</h2>}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about-us' element={<AboutUs />} />
+            <Route path='/list-tasks' element={<ListTask />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </div>
   )
 }

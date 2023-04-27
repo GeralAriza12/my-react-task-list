@@ -17,9 +17,10 @@ body{
     flex-direction: column;
 }
 
-h1{
+h2{
     display: flex;
     font-size: 31px;
+    margin-top: 15px;
     margin-bottom: 28px;
     justify-content: center;
 }
@@ -32,6 +33,7 @@ label{
 ul{
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
     flex-direction: row;
     justify-content: space-evenly;
 }
@@ -92,8 +94,8 @@ span.error {
     border-radius: 20px;
     padding-right: 14px;
     align-items: center;
-    justify-content: space-between;
     background-color: #dfeced94;
+    justify-content: space-between;
 }
 
 #taskList{
@@ -110,11 +112,11 @@ span.error {
 }
 
 .buttonE, .buttonB{
-    border: none;
-    background: none;
-    cursor: pointer;
     width: 35px;
     height: 35px;
+    border: none;
+    cursor: pointer;
+    background: none;
 }
 
 .buttonB{
@@ -127,4 +129,91 @@ span.error {
 
 .button{
     cursor: pointer;
+}
+
+h1{
+    font-size: 67px;
+    font-family: none;
+}
+
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.btn1{
+    width: 166px;
+    height: 32px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 24px;
+    border-radius: 15px;
+    background-color: #2aa4a5;
+}
+
+p{
+    width: 460px;
+    text-align: justify;
+}
+
+.toMenu{
+    display: flex;
+    justify-content: center;
+}
+
+.item{
+    color: #477e7d;
+    text-decoration: none;
+}
+
+.menu li {
+    position: relative;
+    color: #ffffff94;
+}
+
+.menu{
+    width: 851px;
+    height: 73px;
+    font-size: 15px;
+    align-items: center;
+    margin-bottom: 57px;
+    border-radius: 20px;
+    background: #ffffff0f;
+}
+
+.menu li::before {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    margin-bottom: -2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+    background: linear-gradient(to right, #b2f1d4, #78c1bc, #5fa8ab);
+}
+
+.menu li:hover::before {
+    transform: scaleX(1);
+}
+
+.menu[data-animation="center"] a::before {
+    transform-origin: center;
+}
+
+.aboutUs{
+    display: flex;
+}
+
+img{
+    width: 300px;
+    margin-left: 70px;
 }

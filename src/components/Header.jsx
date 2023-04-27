@@ -1,7 +1,7 @@
 // En este componente se debe visualizar el título de la aplicación.
 const Header = () => {
     return (
-        <h1>APLICACIÓN DE TAREAS</h1>
+        <h2>APLICACIÓN DE TAREAS</h2>
     );
 }
 
