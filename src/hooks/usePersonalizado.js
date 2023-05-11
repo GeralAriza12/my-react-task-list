@@ -7,16 +7,13 @@ export function usePersonalizado() {
   const [editedDescription, setEditedDescription] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null)
-  const [counter, setCounter] = useState(Number)
 
   const addTask = (task) => {
     setTasks(prevState => [...prevState, task])
-    setCounter((prevState) => prevState + 1)
   }
 
   const deleteTask = (id) => {
-    setTasks(prevState => prevState.filter(t => t.id !== id));
-    setCounter((prevState) => prevState - 1)
+    setTasks(prevState => prevState.filter(t => t.id !== id))
   }
 
   const toggleTask = (id) => {
@@ -49,19 +46,8 @@ export function usePersonalizado() {
     setPreviousFocusEl(document.activeElement);
   }
 
-  useEffect(()=>{
-    let count = localStorage.getItem('counter')
-    if (count){
-      setCounter (JSON.parse(count))
-    }
-  }, [])
-
-  useEffect(()=>{
-    localStorage.setItem('counter', JSON.stringify(counter))
-  }, [counter])
-
   return (
     [addTask, enterEditMode, updateTask, deleteTask, closeEditMode, toggleTask,
-      tasks, editedTask, isEditing, counter ]
+      tasks, editedTask, isEditing]
   )
 }

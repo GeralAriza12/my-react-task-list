@@ -1,6 +1,6 @@
 const SobreNosotros = () => {
     return (
-        <div >
+        <div className="conten">
             <h2>Sobre Nosotros</h2>
             <div className="aboutUs">
                 <p>
@@ -13,7 +13,7 @@ const SobreNosotros = () => {
                     <br></br>
                     Las tecnologías que se usaron para está página: React (Hooks, PlusIcon, Form), js, css, html.
                 </p>
-                <img src="https://www.digitalbizmagazine.com/wp-content/uploads/2016/10/personas-y-tareas.png" />
+                <img src="https://transferlab.es/wp-content/themes/transferlab/images/imagen_header_sobre.png" />
             </div>
         </div>
     )

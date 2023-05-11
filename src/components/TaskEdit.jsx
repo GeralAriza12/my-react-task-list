@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { CheckIcon } from '@heroicons/react/24/solid'
+import { Input, Stack } from '@chakra-ui/react'
 
 const TaskEdit = ({editedTask, updateTask, closeEditMode})  => {
   const [updatedTask, setUpdatedTask] = useState(editedTask.name);
@@ -24,17 +25,17 @@ const TaskEdit = ({editedTask, updateTask, closeEditMode})  => {
   return (
     <div onClick={(e) => {e.target === e.currentTarget && closeEditMode()}} >
       <form onSubmit={editSubmit}>
-        <div>
+        <Stack spacing={2}>
           <label htmlFor="editTask">Edita la tarea</label>
-          <input className="input" type="text" id="editTask" placeholder='Edita la tarea' required 
+          <Input variant='flushed' htmlSize={40} type="text" id="editTask" placeholder='Edita la tarea' required 
           value={updatedTask}
           onInput={(e) => setUpdatedTask(e.target.value)}/>
 
-          <input className="input" type="text" id="editDescription" placeholder='Edita la descripción'
+          <Input variant='flushed' type="text" id="editDescription" placeholder='Edita la descripción'
           value={updatedDescription}
           onInput={(e) => setUpdatedDescription(e.target.value)}/>
           
-        </div>
+        </Stack>
         <button className="btn" aria-label={`Confirma la tarea Editada ${updatedTask, updatedDescription}`} type='submit'><CheckIcon /></button>
       </form>
     </div>

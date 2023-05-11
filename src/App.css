@@ -5,16 +5,13 @@
 
 body{
     display: flex;
+    color: rgba(39, 40, 43, 0.829);
     min-height: 100vh;
     place-items: center;
     justify-content: center;
     font-family: 'Alkatra', cursive;
-    background: linear-gradient(181deg, rgb(221 239 245 / 26%) 0%, rgb(40 95 126 / 65%) 80%, rgb(19 118 109 / 75%) 100%);
-}
-
-.formulario{
-    display: flex;
-    flex-direction: column;
+    background: #f3f1f12a;
+    overflow-x: hidden;
 }
 
 h2{
@@ -23,6 +20,7 @@ h2{
     margin-top: 15px;
     margin-bottom: 28px;
     justify-content: center;
+    color: #7e4747;
 }
 
 label{
@@ -30,12 +28,13 @@ label{
     flex-direction: column;
 }
 
-ul{
+.ulTask{
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     flex-direction: row;
-    justify-content: space-evenly;
+    padding: 0px 50px 0px 56px;
+    justify-content: flex-start;
 }
 
 form{
@@ -43,17 +42,6 @@ form{
     flex-wrap: wrap;
     margin-bottom: 15px;
     justify-content: center;
-}
-
-.input{
-    height: 35px;
-    width: 348px;
-    margin-right: 8px;
-    border-radius: 5px;
-    padding-left: 10px;
-    margin-bottom: 6px;
-    border-color: #2aa4a5;
-    background: #ffffff17;
 }
 
 span.error {
@@ -69,9 +57,10 @@ span.error {
     border: none;
     color: white;
     cursor: pointer;
-    margin-top: 24px;
+    margin-top: 30px;
+    margin-left: 5px;
     border-radius: 6px;
-    background-color: #2aa4a5;
+    background-color: #7e4747;
 }
  
 #tasks{
@@ -85,17 +74,40 @@ span.error {
 }
 
 #taskTarjet{
-    height: 60px;
-    width: 380px;
+    height: 75px;
+    width: 299px;
     display: flex;
+    overflow:auto;
     margin-top: 5px;
     margin-left: 3px;
-    padding-left: 14px;
-    border-radius: 20px;
-    padding-right: 14px;
-    align-items: center;
-    background-color: #dfeced94;
+    align-items: center; 
     justify-content: space-between;
+}
+
+#cardTarjet{
+    display: flex;
+    margin: 0px 7px 0px 7px;
+    align-items: center; 
+    border-radius: 20px;
+    background-color: #dfeced94;
+    padding: 0px 14px 0px 14px;
+}
+
+#taskTarjet::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+#taskTarjet::-webkit-scrollbar-button:increment,#taskTarjet::-webkit-scrollbar-button {
+    display: flex;
+} 
+
+#taskTarjet::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+
+#taskTarjet::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
 }
 
 #taskList{
@@ -104,7 +116,7 @@ span.error {
 
 #infoClear{
     display: flex;
-    color: #477e7d;
+    color: #444343;
     margin-top: 20px;
     margin-bottom: 20px;
     align-items: center;
@@ -120,11 +132,11 @@ span.error {
 }
 
 .buttonB{
-    color: #ff0000c4;
+    color: #e70d0dc4;
 }
 
 .buttonE{
-    color: #0000ffc9;
+    color: #0a0afc91;
 }
 
 .button{
@@ -139,9 +151,26 @@ h1{
 .home{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+}
 
+.fondo{
+    position: absolute;
+    background: hsl(207, 33%, 95%);
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 50px;
+    z-index: -1;
+}
+
+.fondoImg{
+    margin-top: 80px;
+    position: relative;
+    width: 770px;
+    margin-left: 22px;
+    left: 164px;
+    top: 126px;
 }
 
 .btn1{
@@ -153,7 +182,7 @@ h1{
     font-size: 20px;
     margin-top: 24px;
     border-radius: 15px;
-    background-color: #2aa4a5;
+    background-color: #bc4747;
 }
 
 p{
@@ -167,23 +196,27 @@ p{
 }
 
 .item{
-    color: #477e7d;
+    color: #4e494e;
     text-decoration: none;
 }
 
 .menu li {
     position: relative;
-    color: #ffffff94;
+    margin-right: 81px;
 }
 
 .menu{
     width: 851px;
-    height: 73px;
+    height: 30px;
     font-size: 15px;
     align-items: center;
     margin-bottom: 57px;
-    border-radius: 20px;
-    background: #ffffff0f;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 349px;
+    padding: 0px 50px 0px 56px;
+    justify-content: flex-end
 }
 
 .menu li::before {
@@ -198,7 +231,7 @@ p{
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s ease-in-out;
-    background: linear-gradient(to right, #b2f1d4, #78c1bc, #5fa8ab);
+    background: linear-gradient(to right, #f1b2b2, #c17878, #ab5f5f);
 }
 
 .menu li:hover::before {
@@ -211,9 +244,14 @@ p{
 
 .aboutUs{
     display: flex;
+    align-items: center;
 }
 
 img{
-    width: 300px;
-    margin-left: 70px;
+    width: 530px;
+    margin-left: 45px;
+}
+
+.conten{
+    margin-left: 183px; 
 }
