@@ -78,12 +78,18 @@ span.error {
     justify-content: space-between;
 }
 
-#cardTarjet{
+.cardTarjet{
     display: flex;
     align-items: center; 
     border-radius: 20px;
-    margin: 0px 7px 5px 7px;
+    margin: 0px 5px 5px 5px;
     padding: 0px 14px 0px 14px;
+}
+
+.chekeandoColor{
+    border-radius: 20px;
+    margin: 0px 7px 12px 7px;
+    box-shadow: 0 0 15px 0 #7e4747;
 }
 
 #taskTarjet::-webkit-scrollbar {

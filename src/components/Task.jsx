@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PencilSquareIcon  } from '@heroicons/react/24/outline';
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Button, useColorModeValue, Box } from '@chakra-ui/react'
+import { color } from "framer-motion";
 
 const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
     const [isChecked, setIsChecked] = useState(task.checked);
@@ -10,7 +11,7 @@ const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
         setIsChecked(!isChecked);
         toggleTask(task.id)
     }
-
+    
     const [size, setSize] = useState('')
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -40,7 +41,7 @@ const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
     const bg = useColorModeValue('#dfeced94', 'gray.700')
 
     return(
-    <Box bg={bg} id="cardTarjet">
+    <Box bg={bg} className={`cardTarjet ${isChecked ? "chekeandoColor" : "cardTarjet"}`}>
         <div  id="taskTarjet">
         <Box  id="tasks">
             <input className="checkbox" type="checkbox" checked={isChecked} onChange={checkboxChange} name={task.name} id={task.id} />
