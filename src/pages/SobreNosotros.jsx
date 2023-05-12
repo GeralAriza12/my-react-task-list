@@ -1,7 +1,13 @@
+import { useColorModeValue } from "@chakra-ui/react";
+
 const SobreNosotros = () => {
+    const imag = useColorModeValue(
+    'https://transferlab.es/wp-content/themes/transferlab/images/imagen_header_sobre.png',
+    'https://www.grupolfmedia.com/wp-content/uploads/2020/10/consultoria-y-marketing-digital.png')
+
     return (
         <div className="conten">
-            <h2>Sobre Nosotros</h2>
+            <h2><strong>SOBRE NOSOTROS</strong></h2>
             <div className="aboutUs">
                 <p>
                     Esta página web le permitirá a los usuarios agendar sus tareas pendientes en el día, semana o mes,
@@ -13,7 +19,7 @@ const SobreNosotros = () => {
                     <br></br>
                     Las tecnologías que se usaron para está página: React (Hooks, PlusIcon, Form), js, css, html.
                 </p>
-                <img src="https://transferlab.es/wp-content/themes/transferlab/images/imagen_header_sobre.png" />
+                <img src={imag}/>
             </div>
         </div>
     )

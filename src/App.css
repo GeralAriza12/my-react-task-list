@@ -4,23 +4,17 @@
 }
 
 body{
-    display: flex;
-    color: rgba(39, 40, 43, 0.829);
     min-height: 100vh;
-    place-items: center;
-    justify-content: center;
-    font-family: 'Alkatra', cursive;
-    background: #f3f1f12a;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
 h2{
     display: flex;
     font-size: 31px;
     margin-top: 15px;
+    color: #7e4747;
     margin-bottom: 28px;
     justify-content: center;
-    color: #7e4747;
 }
 
 label{
@@ -45,8 +39,8 @@ form{
 }
 
 span.error {
-    display: block;
     color: red;
+    display: block;
     font-size: 0.8rem;
     margin-bottom: 10px;
 }
@@ -86,10 +80,9 @@ span.error {
 
 #cardTarjet{
     display: flex;
-    margin: 0px 7px 0px 7px;
     align-items: center; 
     border-radius: 20px;
-    background-color: #dfeced94;
+    margin: 0px 7px 5px 7px;
     padding: 0px 14px 0px 14px;
 }
 
@@ -110,18 +103,9 @@ span.error {
     border-radius: 20px;
 }
 
-#taskList{
+/* #taskList{
     margin-top: 10px;
-}
-
-#infoClear{
-    display: flex;
-    color: #444343;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    align-items: center;
-    justify-content: center;
-}
+} */
 
 .buttonE, .buttonB{
     width: 35px;
@@ -132,15 +116,11 @@ span.error {
 }
 
 .buttonB{
-    color: #e70d0dc4;
+    color: #e02727c4;
 }
 
 .buttonE{
-    color: #0a0afc91;
-}
-
-.button{
-    cursor: pointer;
+    color: #0b0b9191;
 }
 
 h1{
@@ -151,26 +131,26 @@ h1{
 .home{
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .fondo{
-    position: absolute;
-    background: hsl(207, 33%, 95%);
     top: 0;
     right: 0;
-    border-bottom-left-radius: 50px;
     z-index: -1;
+    position: absolute;
+    background: hsl(207, 33%, 95%);
+    border-bottom-left-radius: 50px;
 }
 
 .fondoImg{
-    margin-top: 80px;
-    position: relative;
+    top: 126px;
+    left: 164px;
     width: 770px;
     margin-left: 22px;
-    left: 164px;
-    top: 126px;
+    margin-top: 80px;
+    position: relative;
 }
 
 .btn1{
@@ -208,13 +188,13 @@ p{
 .menu{
     width: 851px;
     height: 30px;
-    font-size: 15px;
-    align-items: center;
-    margin-bottom: 57px;
     display: flex;
     flex-wrap: wrap;
+    font-size: 15px;
     list-style: none;
     margin-left: 349px;
+    align-items: center;
+    margin-bottom: 57px;
     padding: 0px 50px 0px 56px;
     justify-content: flex-end
 }
