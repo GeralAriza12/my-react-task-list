@@ -9,7 +9,7 @@ const Tareas = () => {
     tasks, editedTask, isEditing] = usePersonalizado();
 
     return (
-        <div>
+        <div className='appTask'>
             < Header />
             {isEditing && (<TaskEdit editedTask={editedTask} updateTask={updateTask} closeEditMode={closeEditMode}/>)}
             <TaskForm addTask={addTask}/>

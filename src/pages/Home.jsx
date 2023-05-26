@@ -7,7 +7,7 @@ const Home = () => {
     const bg = useColorModeValue( 'gray.200', 'gray.700')
 
     return (
-        <div>
+        <div className="fondHome">
         <Box color={color} fondo={fondo} className="conten">
             <Box bg={bg} className="fondo">
                 <img src="https://frontendchallenges.netlify.app/project-tracking-intro-component/images/illustration-devices.svg" className="fondoImg" />

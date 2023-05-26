@@ -33,7 +33,6 @@ label{
 
 form{
     display: flex;
-    flex-wrap: wrap;
     margin-bottom: 15px;
     justify-content: center;
 }
@@ -109,10 +108,6 @@ span.error {
     border-radius: 20px;
 }
 
-/* #taskList{
-    margin-top: 10px;
-} */
-
 .buttonE, .buttonB{
     width: 35px;
     height: 35px;
@@ -146,7 +141,6 @@ h1{
     right: 0;
     z-index: -1;
     position: absolute;
-    background: hsl(207, 33%, 95%);
     border-bottom-left-radius: 50px;
 }
 
@@ -191,7 +185,7 @@ p{
     margin-right: 81px;
 }
 
-.menu{
+.menu, .mobile-menu{
     width: 851px;
     height: 30px;
     display: flex;
@@ -201,7 +195,7 @@ p{
     margin-left: 349px;
     align-items: center;
     margin-bottom: 57px;
-    padding: 0px 50px 0px 56px;
+    padding: 0px 77px 0px 56px;
     justify-content: flex-end
 }
 
@@ -228,6 +222,14 @@ p{
     transform-origin: center;
 }
 
+.hamburger {
+    display: none;
+}
+  
+.mobile-menu {
+    display: none;
+}
+
 .aboutUs{
     display: flex;
     align-items: center;
@@ -240,4 +242,79 @@ img{
 
 .conten{
     margin-left: 183px; 
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: block;
+      }
+    .menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+
+    .toMenu{
+        justify-content: flex-end;
+        text-align: end;
+    }
+
+    .home {
+        align-items: center;
+    }
+
+    .fondoImg {
+        top: 271px;
+    }
+
+    button{
+        margin-left: 26px;
+        width: 111px;
+    }
+    .cardTarjet{
+        width: 300px;
+    }
+}
+
+@media (max-width: 607px) {
+    h1{
+        font-size: 44px;
+    }
+    h2{
+        font-size: 26px;
+        margin-top: -4px;
+    }
+    p{
+        width: 280px;
+    }
+    .fondo{
+        top: 309px;
+        right: -2px;
+        left: 10px;
+    }
+    .fondoImg {
+        top: 26px;
+        margin-left: -52px;
+        margin-top: 44px;
+    }
+    .conten {
+        margin-left: 30px;
+    }
+    .fondHome{
+        position: absolute;
+    }
+    .aboutUs{
+        flex-direction: column;
+    }
+    .appTask{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 27px;
+    }
+    .cardTarjet{
+        width: 347px;
+        margin-left: 48px;  
+    }
 }

@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { PencilSquareIcon  } from '@heroicons/react/24/outline';
-import { TrashIcon } from '@heroicons/react/24/outline';
+import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Button, useColorModeValue, Box } from '@chakra-ui/react'
-import { color } from "framer-motion";
 
 const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
     const [isChecked, setIsChecked] = useState(task.checked);
@@ -68,7 +66,7 @@ const Task = ({ task, deleteTask, toggleTask, enterEditMode }) => {
         </div>
         <div>
             <button className="buttonE" aria-label={`Update ${task.name} task`} onClick={()=> enterEditMode(task)}> <PencilSquareIcon width={24} height={24} /> </button>
-            <button className="buttonB" aria-label={`Delete ${task.name} task`} onClick={()=> deleteTask(task.id)}>  <TrashIcon width={24} height={24} /> </button>
+            <button className="buttonB" aria-label={`Delete ${task.name} task`} onClick={()=> deleteTask(task.id)}> <TrashIcon width={24} height={24} /> </button>
         </div>
     </Box>
     );
