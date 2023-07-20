@@ -5,14 +5,14 @@ import TaskEdit from '../components/TaskEdit'
 import { usePersonalizado } from '../hooks/usePersonalizado';
 
 const Tareas = () => {
-    const [addTask, enterEditMode, updateTask, deleteTask, closeEditMode, toggleTask,
+    const [postTask, enterEditMode, updateTask, deleteTask, closeEditMode, toggleTask,
     tasks, editedTask, isEditing] = usePersonalizado();
 
     return (
         <div className='appTask'>
             < Header />
             {isEditing && (<TaskEdit editedTask={editedTask} updateTask={updateTask} closeEditMode={closeEditMode}/>)}
-            <TaskForm addTask={addTask}/>
+            <TaskForm addTask={postTask}/>
             {tasks && (<TaskList tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} enterEditMode={enterEditMode}/>)}
         </div>
     )

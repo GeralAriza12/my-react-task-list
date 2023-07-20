@@ -1,19 +1,68 @@
 import { useEffect, useState } from 'react'
-import useLocalStorage from "./useLocalStorage";
+import axios from "axios"
 
 export function usePersonalizado() {
-  const [tasks, setTasks] = useLocalStorage('task-list', []);
+  const [tasks, setTasks] = useState([]);
   const [editedTask, setEditedTask] = useState(null);
   const [editedDescription, setEditedDescription] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null)
 
-  const addTask = (task) => {
-    setTasks(prevState => [...prevState, task])
+  useEffect(() => {
+    getTask()
+  },[tasks]);
+
+  async function postTask(task) {
+    try {
+      const response = await axios.post('http://localhost:3000/create', task);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  const deleteTask = (id) => {
-    setTasks(prevState => prevState.filter(t => t.id !== id))
+  async function getTask() {
+    try {
+      const response = await axios.get('http://localhost:3000/read');
+      setTasks(response.data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function deleteTask(id) {
+    try {
+      const response = await axios.delete(`http://localhost:3000/delete/${id}`);
+      setTasks(response);
+
+      getTask();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function updateTask(id) {
+    try {
+      console.log(id);
+      const putTaskBody = {
+        name: id.name, 
+        description: id.description,
+        checked: id.checked
+      }
+
+      console.log(putTaskBody);
+
+      const response = await axios.put(`http://localhost:3000/update/${id._id}`, putTaskBody);
+
+      setEditedTask(response.name);
+      setEditedDescription(response.description);
+      setIsChecked(response.checked);
+
+      closeEditMode();
+      getTask();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const toggleTask = (id) => {
@@ -22,16 +71,6 @@ export function usePersonalizado() {
         ? { ...t, checked: !t.checked }
         : t
     )))
-  }
-
-  const updateTask = (task) => {
-    setTasks(prevState => prevState.map(t => (
-      t.id === task.id
-        ? { ...t, name: task.name, description: task.description}
-
-        : t
-    )))
-    closeEditMode();
   }
 
   const closeEditMode = () => {
@@ -47,7 +86,7 @@ export function usePersonalizado() {
   }
 
   return (
-    [addTask, enterEditMode, updateTask, deleteTask, closeEditMode, toggleTask,
+    [postTask, enterEditMode, updateTask, deleteTask, closeEditMode, toggleTask,
       tasks, editedTask, isEditing]
   )
 }

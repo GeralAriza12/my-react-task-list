@@ -12,8 +12,6 @@ import { Input, Stack } from '@chakra-ui/react'
     addTask({
       name: task,
       description: description,
-      checked: false,
-      id: Date.now()
     })
     setTask("")
     setDescription("")
