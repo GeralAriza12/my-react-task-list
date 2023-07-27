@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+h2{
+    display: flex;
+    font-size: 31px;
+    margin-top: 15px;
+    color: #7e4747;
+    margin-bottom: 28px;
+    justify-content: center;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+.ulTask{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-direction: row;
+    padding: 0px 50px 0px 56px;
+    justify-content: flex-start;
+}
+
+form{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+span.error {
+    color: red;
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.btn{
+    width: 38px;
+    height: 38px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 5px;
+    border-radius: 6px;
+    background-color: #7e4747;
+}
+ 
+#tasks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+    
+.checkbox{
+    margin-right: 11px;
+}
+
+#taskTarjet{
+    height: 75px;
+    width: 299px;
+    display: flex;
+    overflow:auto;
+    margin-top: 5px;
+    margin-left: 3px;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.cardTarjet{
+    display: flex;
+    align-items: center; 
+    border-radius: 20px;
+    margin: 0px 5px 5px 5px;
+    padding: 0px 14px 0px 14px;
+}
+
+.chekeandoColor{
+    border-radius: 20px;
+    margin: 0px 7px 12px 7px;
+    box-shadow: 0 0 15px 0 #7e4747;
+}
+
+#taskTarjet::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+#taskTarjet::-webkit-scrollbar-button:increment,#taskTarjet::-webkit-scrollbar-button {
+    display: flex;
+} 
+
+#taskTarjet::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+
+#taskTarjet::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+}
+
+.buttonE, .buttonB{
+    width: 35px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.buttonB{
+    color: #e02727c4;
+}
+
+.buttonE{
+    color: #0b0b9191;
+}
+
+h1{
+    font-size: 67px;
+    font-family: none;
+}
+
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fondo{
+    top: 0;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+    border-bottom-left-radius: 50px;
+}
+
+.fondoImg{
+    top: 126px;
+    left: 164px;
+    width: 770px;
+    margin-left: 22px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.btn1{
+    width: 166px;
+    height: 32px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 24px;
+    border-radius: 15px;
+    background-color: #bc4747;
+}
+
+p{
+    width: 460px;
+    text-align: justify;
+}
+
+.toMenu{
+    display: flex;
+    justify-content: center;
+}
+
+.item{
+    color: #4e494e;
+    text-decoration: none;
+}
+
+.menu li {
+    position: relative;
+    margin-right: 81px;
+}
+
+.menu, .mobile-menu{
+    width: 851px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    list-style: none;
+    margin-left: 349px;
+    align-items: center;
+    margin-bottom: 57px;
+    padding: 0px 77px 0px 56px;
+    justify-content: flex-end
+}
+
+.menu li::before {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    margin-bottom: -2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+    background: linear-gradient(to right, #f1b2b2, #c17878, #ab5f5f);
+}
+
+.menu li:hover::before {
+    transform: scaleX(1);
+}
+
+.menu[data-animation="center"] a::before {
+    transform-origin: center;
+}
+
+.hamburger {
+    display: none;
+}
+  
+.mobile-menu {
+    display: none;
+}
+
+.aboutUs{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    width: 530px;
+    margin-left: 45px;
+}
+
+.conten{
+    margin-left: 183px; 
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: block;
+      }
+    .menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+
+    .toMenu{
+        justify-content: flex-end;
+        text-align: end;
+    }
+
+    .home {
+        align-items: center;
+    }
+
+    .fondoImg {
+        top: 271px;
+    }
+
+    button{
+        margin-left: 26px;
+        width: 111px;
+    }
+    .cardTarjet{
+        width: 300px;
+    }
+}
+
+@media (max-width: 607px) {
+    h1{
+        font-size: 44px;
+    }
+    h2{
+        font-size: 26px;
+        margin-top: -4px;
+    }
+    p{
+        width: 280px;
+    }
+    .fondo{
+        top: 309px;
+        right: -2px;
+        left: 10px;
+    }
+    .fondoImg {
+        top: 26px;
+        margin-left: -52px;
+        margin-top: 44px;
+    }
+    .conten {
+        margin-left: 30px;
+    }
+    .fondHome{
+        position: absolute;
+    }
+    .aboutUs{
+        flex-direction: column;
+    }
+    .appTask{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 27px;
+    }
+    .cardTarjet{
+        width: 347px;
+        margin-left: 48px;  
+    }
+}
